@@ -31,7 +31,7 @@ module.exports = function(context, req) {
     
     var params = getParams(req);
     
-    costCalculator.getCost(context, params.filter, params.granularity, params.startDate, params.endDate, params.detailed)
+    costCalculator.getCost(context, params.filter, params.granularity, yesterDay, params.endDate, params.detailed)
     .then(res => {
         context.res = res;
         context.done();
