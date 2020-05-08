@@ -25,12 +25,9 @@ module.exports = function(context, req) {
     var creds = getCreds();
     var costCalculator = new BillingCostCalculator(creds.clientId, creds.clientSecret, creds.tenantId, creds.subscriptionId, creds.offerId);
     
-    var yesterDay = new Date();
-    yesterDay.setDate(yesterDay.getDate()-1);
-    
     var params = getParams(req);
     
-    costCalculator.getCost(context, params.filter, params.granularity, yesterDay, params.endDate, params.detailed)
+    costCalculator.getCost(context, params.filter, params.granularity, params.startDate, params.endDate, params.detailed)
     .then(res => {
         context.res = res;
         context.done();
