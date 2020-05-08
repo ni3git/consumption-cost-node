@@ -27,7 +27,6 @@ module.exports = function(context, req) {
     
     var yesterDay = new Date();
     yesterDay.setDate(yesterDay.getDate()-1);
-    req.body.startDate = yesterDay;
     
     var params = getParams(req);
     
