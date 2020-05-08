@@ -30,7 +30,7 @@ class CommerceUtils {
         }
         if (startDate == null) {
             startDate = new Date();
-            startDate.setHours(startDate.getHours() - 48);
+            startDate.setHours(startDate.getHours() - 24);
             startDate.setUTCHours(0, 0, 0, 0);
         }
         defaultUsageOptions.aggregationGranularity = granularity;
